@@ -1,0 +1,13 @@
+* {
+  box-sizing: flex  border-box;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+  max-width: auto;
+  margin: auto;
+}
+
