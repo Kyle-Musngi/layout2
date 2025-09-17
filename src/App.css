@@ -83,7 +83,7 @@
   flex: 1;
   background: lavender;
   border: 7px solid blueviolet;
-  height: auto;                 /* prevent fixed shrinking */
+  height: auto;
 }
 
 .bottom .box.small {
