@@ -1,34 +1,87 @@
 import "./App.css";
 
+//top section
+function TopBoxLarge() {
+  return <div className="box large"></div>;
+}
+
+function TopBoxNested() {
+  return (
+    <div className="box nested">
+      <TopBoxNestedinner name="Lance Kyle"/>
+      <TopBoxNestedinner name="Musngi"/>
+    </div>
+  );
+}
+
+function TopBoxNestedinner(props) {
+  return <div className="inner-box">{props.name}</div>;
+}
+
+
+function Header() {
+  return (
+    <div className="section top">
+      <TopBoxLarge />
+      <TopBoxNested />
+      <TopBoxLarge />
+    </div>
+  );
+}
+
+//Middle section
+function MiddleBoxTall() {
+  return <div className="box tall"></div>;
+}
+
+function MiddleBoxMid() {
+  return <div className="box mid"></div>;
+}
+
+function MiddleCol() {
+  return (
+    <div className="col">
+      <MiddleBoxMid />
+      <MiddleBoxMid />
+    </div>
+  );
+}
+
+function Body() {
+  return (
+    <div className="section middle">
+      <MiddleBoxTall />
+      <MiddleCol />
+    </div>
+  );
+}
+
+//Bottom section
+function BottomBoxWide() {
+  return <div className="box wide"></div>;
+}
+
+function BottomBoxSmall(props) {
+  return <div className="box small">{props.text}</div>;
+}
+
+function Footer() {
+  return (
+    <div className="section bottom">
+      <BottomBoxWide />
+      <BottomBoxSmall text="C-PCIT9"/>
+      <BottomBoxSmall text="IT3A"/>
+      <BottomBoxWide />
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="app">
-      {/* Top Section */}
-      <div className="section top">
-        <div className="box large"></div>
-        <div className="box nested">
-          <div className="inner-box"></div>
-          <div className="inner-box"></div>
-        </div>
-        <div className="box large"></div>
-      </div>
-
-      {/* Middle Section */}
-      <div className="section middle">
-        <div className="box tall"></div>
-        <div className="col">
-          <div className="box mid"></div>
-          <div className="box mid"></div>
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="section bottom">
-        <div className="box wide"></div>
-        <div className="box small"></div>
-        <div className="box small"></div>
-        <div className="box wide"></div>
-      </div>
+      <Header />
+      <Body />
+      <Footer />
     </div>
   );
 }
